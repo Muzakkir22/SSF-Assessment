@@ -23,8 +23,10 @@ public class NewsController {
     public String postNews(@RequestBody MultiValueMap<String, String> form
             , Model model) {
 
-            String name = form.saveArticles("news");
-            if (( null == news)) || (news.trim().length() <= 0 ))
+            String name = ((Object) form).saveArticles("news");
+            Object news;
+            if (( null == news)) || (((String) news).trim().length() <= 0 ))
+            return "news";
             }
 
     @Autowired
